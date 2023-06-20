@@ -1,3 +1,3 @@
 # ssShowcase
- 
-https://ksom10.github.io/ssShowcase/
+
+https://ksom10.github.io/ssShowcase/pages/
