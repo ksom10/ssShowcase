@@ -1703,8 +1703,8 @@ form {
         }
         
         .brunch-button {
-            max-width: 35%;
-            max-height: 35%;
+            width: 50px;
+            height: 50px;
             font-size: 20px;
             background-color: #d99977;
             border-radius: 5%;
@@ -1718,7 +1718,7 @@ form {
 
         .btn-link {
             text-decoration: none;
-            color: blue;
+            color: white;
             font-size: 25px;
             font-family: 'Caveat', cursive;
         }
