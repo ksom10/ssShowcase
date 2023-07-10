@@ -1706,8 +1706,8 @@ form {
         }
         
         .brunchImage button {
-            width: 50%;
-            height: 50%;
+            max-width: 35%;
+            max-height: 35%;
             font-size: 20px;
             background-color: #d99977;
             border-radius: 5%;
