@@ -1716,13 +1716,15 @@ form {
             align-items: center;
             justify-content: center;
             width: 50%;
+            padding: 0;
+            margin: 0;
             min-height: 0; /* Reset min-height */
             background-color: #d99977;
             border-radius: 5%;
             border: 2px solid white;
             cursor: pointer;
             font-family: 'Caveat', cursive;
-            color: white;
+            color: purple;
             text-decoration: none; /* Move text-decoration to the button class */
             font-size: 25px;
         }
