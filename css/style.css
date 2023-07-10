@@ -1712,7 +1712,7 @@ form {
         
         .brunchBtn {
             width: 50%;
-            max-height: 50%;
+            height: 50%;
             background-color: #d99977;
             border-radius: 5%;
             border: 2px solid white;
@@ -1722,7 +1722,6 @@ form {
             color: blue;
             font-size: 25px;
             font-family: 'Caveat', cursive;
-            max-height: 50%;
         }
 
         .btn-link {
