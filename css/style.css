@@ -1715,13 +1715,14 @@ form {
             cursor: pointer;
             font-family: 'Caveat', cursive;
             padding: 5px;
+            margin: 0px;
         }
 
         .btn-link {
             height: 100%;
             width: 100%;
             text-decoration: none;
-            color: blue;
+            color: pink;
             font-size: 25px;
             font-family: 'Caveat', cursive;
         }
