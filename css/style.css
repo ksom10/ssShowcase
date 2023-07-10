@@ -256,7 +256,7 @@ html, body {
 }
 
 .brunchImage {
-    width: 50%;
+    width: 60%;
     height: 600px;
     margin-left: 20px;
     display: flex;
@@ -1702,22 +1702,20 @@ form {
             order: 1;
         }
         
-        .brunchImage button {
+        .brunchBtn {
             width: 50%;
-            height: 50%;
-            font-size: 20px;
+            max-height: 50%;
             background-color: #d99977;
             border-radius: 5%;
             border: 2px solid white;
             cursor: pointer;
             font-family: 'Caveat', cursive;
             color: white;
-            font-size: 20px;
         }
 
         .btn-link {
             text-decoration: none;
-            color: green;
+            color: white;
             font-size: 25px;
             font-family: 'Caveat', cursive;
         }
