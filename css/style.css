@@ -1706,8 +1706,8 @@ form {
         }
         
         .brunchImage button {
-            width: 35%;
-            height: 35%;
+            max-width: 35%;
+            max-height: 35%;
             font-size: 20px;
             background-color: #d99977;
             border-radius: 5%;
@@ -1715,17 +1715,16 @@ form {
             cursor: pointer;
             font-family: 'Caveat', cursive;
             padding: 5px;
-            margin: 0px;
+            margin: 0;
         }
 
         .btn-link {
             height: 100%;
             width: 100%;
             text-decoration: none;
-            color: pink;
+            color: white;
             font-size: 25px;
             font-family: 'Caveat', cursive;
-            background-color: #223745;
         }
 
        
