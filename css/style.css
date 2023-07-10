@@ -268,7 +268,7 @@ html, body {
     background-position: center;
 }
 
-.brunchImage button {
+.brunchBtn {
     width: 35%;
     height: 35%;
     font-size: 20px;
@@ -278,7 +278,14 @@ html, body {
     cursor: pointer;
     font-family: 'Caveat', cursive;
     color: white;
-    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    font-size: 35px;
+    font-family: 'Caveat', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-link {
@@ -287,6 +294,7 @@ html, body {
     font-size: 35px;
     font-family: 'Caveat', cursive;
 }
+
 .brunchContent {
     width: 55%;
     height: 70%;
@@ -1710,7 +1718,11 @@ form {
             border: 2px solid white;
             cursor: pointer;
             font-family: 'Caveat', cursive;
-            color: white;
+            text-decoration: none;
+            color: blue;
+            font-size: 25px;
+            font-family: 'Caveat', cursive;
+            max-height: 50%;
         }
 
         .btn-link {
