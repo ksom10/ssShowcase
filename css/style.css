@@ -1126,9 +1126,6 @@ footer h4 {
     color: #d99977;;
   }
 
-.sidenav h2 {
-    color: #8a0000;
-}
 
 .visit {
     width: 100%;
@@ -1721,7 +1718,7 @@ form {
 
         .btn-link {
             text-decoration: none;
-            color: white;
+            color: green;
             font-size: 25px;
             font-family: 'Caveat', cursive;
         }
