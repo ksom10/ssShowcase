@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
 html, body {
     margin: 0;
     padding: 0;
@@ -7,11 +9,14 @@ html, body {
   body {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   nav{
-    height: 200px;
-    width: 100%;
+    height: 150px;
+    width: 60%;
+    background-color:  white;
     display: flex;
     flex-direction: row;
   }
@@ -21,17 +26,88 @@ html, body {
     width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    background-image: linear-gradient(to bottom right, rgba(138, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url("../images/tires.png");
-    background-size: cover;
-    background-position: center;
+    font-family: 'Caveat', cursive;
+}
+
+.mobile-nav {
+    display: block; /* Hide the navigation menu by default on desktop */
+    z-index: 9999;
+    align-items: center;
+  }
+  
+  .menu-icon, .close-icon {
+    display: inline-block;
+    cursor: pointer;
+    color: #5b706d;
+    font-size: 50px;
+    padding: 10px;
+    
+    z-index: 10000;
+  }
+  
+  .menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 300px;
+    height: 200px;
+    z-index: 10001;
+  }
+  
+  .menu li {
+    padding: 10px;
+    background-color: #abb0a6;
+  }
+  
+  .menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 50px;
+  }
+
+  .close-icon {
+    display: none;
+    margin-top: 160px;
+  }
+
+  .sidenav-mobile {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block; /* Show the hamburger icon on mobile */
+  }
+
+  .menu {
+    display: none; /* Hide the menu by default on mobile */
+  }
+
+  #toggle {
+    display: none;
+  }
+
+  /* Show the menu when the toggle is checked (hamburger icon is clicked) */
+  #toggle:checked ~ .menu {
+    display: block;
+    z-index: 100;
+  }
+
+  /* Hide the hamburger icon and show the close icon in the active state */
+  #toggle:checked ~ .menu-icon {
+    display: none;
+}
+
+#toggle:checked ~ .close-icon {
+    display: inline-block;
 }
 
 
-
 .title h1 {
-    margin-left: 50px;
-    color: white;
+    margin-right: 50px;
+    color: #5b706d;
     font-size: 55px;
 }
 
@@ -39,17 +115,19 @@ html, body {
     height: 20%;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .links a {
     text-decoration: none;
-    font-size: 28px;
+    font-size: 45px;
     padding-right: 25px;
     padding-left: 25px;
     padding-top: 45px;
-    color: white;
+    color: #223745;
+    font-family: 'Caveat', cursive;
 }
 
 .home {
@@ -63,51 +141,38 @@ html, body {
 
 .home-content {
     width: 100%;
-    height: 600px;
+    height: 100%;
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .banner {
-    width: 70%;
-    height: 250px;
-    background-image: linear-gradient(to bottom right, rgba(128,128,128, 0.2), rgba(0, 0, 0, 0.1)), url("../images/lit.avif");
+    width: 60%;
+    height: 600px;
+    background-image: linear-gradient(to bottom right, rgba(217,153,119, 0.5), rgba(0, 0, 0, 0.3)), url("../images/view.JPG");
     background-size: cover;
     background-position: center;
     align-items: center;
+    justify-content: center;
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 10px;
     text-align: left;
     padding-bottom: 30px;
 }
 
 .banner h1 {
     color: white;
-    font-size: 45px;
-}
-
-.banner p {
-    color: white;
-    font-size: 20px;
-}
-
-.banner button {
-    background-color: #8a0000;
-    border: none;
-    width: 20%;
-    border-radius: 15px;
-    padding: 10px;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+    font-size: 85px;
+    font-family: 'Caveat', cursive;
 }
 
 .description {
-    width: 90%;
+    width: 65%;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -117,20 +182,33 @@ html, body {
 }
 
 .descImage {
-    width: 35%;
-    height: 300px;
-    
+    width: 60%;
+    height: 600px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    background-image: linear-gradient(to bottom right, rgba(128,128,128, 0.5), rgba(0, 0, 0, 0.1)), url("../images/oysters.JPG");
+    background-size: cover;
+    background-position: center;
 }
 
-.descImage img {
-    width: 100%;
-    height: 100%;
-    margin-left: 20px;
-    border: solid 1px #8a0000;
+.descImage button {
+    width: 25%;
+    height: 25%;
+    font-size: 20px;
+    background-color: #d99977;
+    border-radius: 5%;
+    border: 2px solid white;
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+    color: white;
+    font-size: 35px;
 }
 .descContent {
     width: 50%;
-    height: 100%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,12 +216,33 @@ html, body {
 }
 
 .descContent p {
-    font-size: 40px;
-    color: #8a0000;
+    font-size: 45px;
+    color: #5b706d;
+    font-family: 'Caveat', cursive;
 }
 
-.services {
+.menus {
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menusContent {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.brunch {
+    width: 65%;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -152,120 +251,92 @@ html, body {
     margin-top: 50px;
 }
 
-.servContent {
-    width: 90%;
-    height: 100%;
+.brunchImage, .brunchContent {
+    flex-basis: 50%;
+}
+
+.brunchImage {
+    width: 50%;
+    height: 600px;
+    margin-left: 20px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    background-image: linear-gradient(to bottom right, rgba(128,128,128, 0.5), rgba(0, 0, 0, 0.1)), url("../images/cocktailTwo.JPG");
+    background-size: cover;
+    background-position: center;
+}
+
+.brunchImage button {
+    width: 35%;
+    height: 25%;
+    font-size: 20px;
+    background-color: #d99977;
+    border-radius: 5%;
+    border: 2px solid white;
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+    color: white;
+    font-size: 35px;
+}
+.brunchContent {
+    width: 55%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.repair{
-    width: 300px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-right: 20px;
-}
-
-.repair img {
-    width: 80%;
-    height: 190px;
-}
-
-.repair a{
-    color: #8a0000;
-    text-decoration: none;
-    font-size: 25px;
-    text-emphasis-style: bold;
-    margin-top: 12px;
-}
-
-.repair p {
-    width: 80%;
-    font-size: 17px;
-    text-align: center;
-}
-
-.repairTwo{
-    width: 300px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-right: 20px;
-}
-
-.repairTwo img {
-    width: 80%;
-    height: 190px;
-}
-
-.repairTwo a{
-    color: #8a0000;
-    text-decoration: none;
-    font-size: 25px;
-    text-emphasis-style: bold;
-    margin-top: 12px;
-}
-
-.repairTwo p {
-    width: 80%;
-    font-size: 17px;
-    text-align: center;
-}
-
-.repairThree{
-    width: 300px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.repairThree img {
-    width: 80%;
-    height: 190px;
-}
-
-.repairThree a{
-    color: #8a0000;
-    text-decoration: none;
-    font-size: 25px;
-    text-emphasis-style: bold;
-    margin-top: 12px;
-}
-
-.repairThree p {
-    width: 80%;
-    font-size: 17px;
+.brunchContent p {
+    font-size: 55px;
+    color: #5b706d;
+    font-family: 'Caveat', cursive;
     text-align: center;
 }
 
 footer {
     display: flex;
     flex-direction: row;
-    height: 50px;
+    height: 100%;
     width: 100%;
     align-items: center;
     justify-content: space-evenly;
     margin-top: 25px;
-    background-color: #8a0000;
+    background-color: #5b706d;
     bottom: 0;
+    font-family: 'Caveat', cursive;
+}
+
+.footerRow {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 footer p {
     color: white;
+    font-size: 30px;
+    margin-top: -10px;
+    padding-bottom: 20px;
 }
 
 footer h3 {
     color: white;
+    font-size: 50px;
 }
 
-.servicesCont {
+footer h4 {
+    color: #d99977;
+    font-size: 40px;
+    margin-top: -20px;
+}
+
+.menuCont {
     width: 100%;
     min-height: 81vh;
     display: flex;
@@ -274,7 +345,17 @@ footer h3 {
     justify-content: center;
 }
 
-.services-content {
+.menuMain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d99977;
+}
+
+.menu-content {
     width: 100%;
     min-height: 100%;
     background-size: cover;
@@ -284,86 +365,750 @@ footer h3 {
     align-items: center;
 }
 
-.services-body{
-    width: 85%;
+.menu-body{
+    width: 75%;
     height: 100%;
     margin-top: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
 
-.services-info{
+.menu-info{
     height: 100%;
-    width: 65%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+    
 }
 
-.servImg {
-    width: 45%;
+.menuImg {
+    width: 50%;
     height: 50%;
-    float: left;
     padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.menuImg img {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.menuText {
+    width: 65%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuText li {
+    font-size: 28px;
+    width: 100%;
+    font-family: 'Caveat', cursive;
+}
+
+.menuRow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.menu-rowContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.menu-rowContent h3 {
+    font-size: 50px;
+    color: #223745;
+    width: 100%;
+}
+
+.menu-rowContent p {
+    font-size: 30px;
+    margin-top: -30px;
+    width: 100%;
+}
+
+.menuText h2 {
+    font-size: 65px;
+    text-align: center;
+    width: 100%;
+    color: #5b706d;
+    font-family: 'Caveat', cursive;
+}
+
+.menuSecond {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: solid 1px #223745;
+    margin-top: 20px;
+    background-color: #223745;
+}
+
+
+
+.menuImgTwo {
+    width: 50%;
+    height: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
    
 }
 
-.servImg img {
+.menuImgTwo img {
     width: 100%;
     height: 100%;
     float: left;
 }
 
-.servText {
+.menuTextTwo {
+    width: 65%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuTextTwo li {
+    font-size: 28px;
+    width: 100%;
+    font-family: 'Caveat', cursive;
+}
+
+.menuRowTwo {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.menu-rowContentTwo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.menu-rowContentTwo h3 {
+    font-size: 50px;
+    color: #d99977;
+    width: 100%;
+}
+
+.menu-rowContentTwo p {
+    font-size: 30px;
     margin-top: -30px;
-}
-
-.servText p {
-    font-size: 28px;
-    text-align: left;
     width: 100%;
+    color: white;
 }
 
-.servText h2 {
-    font-size: 40px;
-    text-align: left;
+.menuTextTwo h2 {
+    font-size: 65px;
+    text-align: center;
     width: 100%;
-    color: #8a0000;
+    color: white;
+    font-family: 'Caveat', cursive;
 }
 
-.servSecond {
+
+
+.menuThird {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #5b706d;
+}
+
+
+
+.menuImgThird {
+    width: 50%;
     height: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.menuImgThird img {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.menuTextThird {
+    width: 65%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+.menuTextThird li {
+    font-size: 28px;
+    width: 100%;
+    font-family: 'Caveat', cursive;
+}
+
+.menuRowThird {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -50px;
+}
+
+.menu-rowContentThird {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.menu-rowContentThird h3 {
+    font-size: 50px;
+    color: #223745;
+    width: 100%;
+}
+
+.menu-rowContentThird p {
+    font-size: 30px;
+    margin-top: -30px;
+    width: 100%;
+    color: white;
+}
+
+.menuTextThird h2 {
+    font-size: 65px;
+    text-align: center;
+    width: 100%;
+    color: #d99977;
+    font-family: 'Caveat', cursive;
+}
+
+
+.menuFourth {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #d99977;
+}
+
+
+
+.menuImgFourth {
+    width: 50%;
+    height: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.menuImgFourth img {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.menuTextFourth {
+    width: 65%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+.menuTextFourth li {
+    font-size: 28px;
+    width: 100%;
+    font-family: 'Caveat', cursive;
+}
+
+.menuRowFourth {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -50px;
+}
+
+.menu-rowContentFourth {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.menu-rowContentFourth h3 {
+    font-size: 50px;
+    color: #223745;
+    width: 100%;
+}
+
+.menu-rowContentFourth p {
+    font-size: 30px;
+    margin-top: -30px;
+    width: 100%;
+}
+
+.menuTextFourth h2 {
+    font-size: 65px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-family: 'Caveat', cursive;
+}
+
+
+
+.cocktailMain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d99977;
+}
+
+.cocktail-content {
+    width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cocktail-body{
+    width: 75%;
+    height: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.cocktail-info{
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+    
 }
 
-.servSecond h1 {
-    font-size: 22px;
+.cocktailImg {
+    width: 50%;
+    height: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.cocktailImg img {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.cocktailText {
+    width: 65%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.cocktailText li {
+    font-size: 28px;
+    width: 100%;
+    font-family: 'Caveat', cursive;
+}
+
+.cocktailRow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.cocktail-rowContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.cocktail-rowContent h3 {
+    font-size: 50px;
+    color: #223745;
+    width: 100%;
+}
+
+.cocktail-rowContent p {
+    font-size: 35px;
+    margin-top: -30px;
+    width: 100%;
+}
+
+.cocktail-info h2 {
+    font-size: 65px;
     text-align: center;
-    color: #8a0000;
+    width: 100%;
+    color: #5b706d;
+    font-family: 'Caveat', cursive;
 }
 
-.servSecond li {
-    margin-bottom: 15px;
-    font-size: 22px;
+.cocktailSecond {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: solid 1px #223745;
+    margin-top: 20px;
+    background-color: #223745;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
+
+
+
+.cocktailImgTwo {
+    width: 50%;
+    height: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+    
+   
+}
+
+.cocktailImgTwo img {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.cocktailTextTwo {
+    width: 65%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.cocktailTextTwo li {
+    font-size: 28px;
+    width: 100%;
+    font-family: 'Caveat', cursive;
+}
+
+.cocktailRowTwo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.cocktail-rowContentTwo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.cocktail-rowContentTwo h3 {
+    font-size: 50px;
+    color: #d99977;
+    width: 100%;
+}
+
+.cocktail-rowContentTwo p {
+    font-size: 35px;
+    margin-top: -30px;
+    width: 100%;
+    color: white;
+}
+
+.cocktailTextTwo h2 {
+    font-size: 65px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-family: 'Caveat', cursive;
+}
+
+.cocktailThird {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #5b706d;
+}
+
+
+
+.cocktailImgThird {
+    width: 50%;
+    height: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.cocktailImgThird img {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.cocktailTextThird {
+    width: 65%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+.cocktailTextThird h2 {
+    font-size: 60px;
+    text-align: center;
+    width: 100%;
+    color: #d99977;
+    font-family: 'Caveat', cursive;
+}
+
+.cocktailTextThird li {
+    font-size: 28px;
+    width: 100%;
+    font-family: 'Caveat', cursive;
+}
+
+.cocktailRowThird {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -50px;
+}
+
+.cocktail-rowContentThird {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.cocktail-rowContentThird h2 {
+    font-size: 50px;
+    color: white;
+    width: 100%;
+    text-align: left;
+}
+
+.cocktail-rowContentThird h3 {
+    font-size: 40px;
+    color: #223745;
+    width: 100%;
+}
+
+.cocktail-rowContentThird p {
+    font-size: 20px;
+    margin-top: -30px;
+    width: 100%;
+    color: white;
+}
+
+.cocktailFourth {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #d99977;
+}
+
+
+
+.cocktailImgFourth {
+    width: 50%;
+    height: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.cocktailImgFourth img {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.cocktailTextFourth {
+    width: 65%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+.cocktailTextFourth li {
+    font-size: 28px;
+    width: 100%;
+    font-family: 'Caveat', cursive;
+}
+
+.cocktailRowFourth {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -50px;
+}
+
+.cocktail-rowContentFourth {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.cocktail-rowContentFourth h3 {
+    font-size: 50px;
+    color: #223745;
+    width: 100%;
+}
+
+.cocktail-rowContentFourth p {
+    font-size: 30px;
+    margin-top: -30px;
+    width: 100%;
+}
+
+.cocktailTextFourth h2 {
+    font-size: 65px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-family: 'Caveat', cursive;
+}
+
+.menuTextThird h2 {
+    font-size: 60px;
+    text-align: center;
+    width: 100%;
+    color: #d99977;
+    font-family: 'Caveat', cursive;
+}
+
 
 .sidenav {
     display: flex;
-    flex-direction: column;
-    width: 35%;
+    flex-direction: row;
+    width: 100%;
     align-items: center;
+    justify-content: center;
 }
 
 .sidenav a {
     text-decoration: none;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 50px;
+    padding: 20px;
     text-align: left;
+    font-family: 'Caveat', cursive;
 }
 
 .nav-link {
@@ -371,583 +1116,14 @@ footer h3 {
   }
   
   .nav-link-active{
-    color: black;
+    color: #d99977;;
   }
 
 .sidenav h2 {
     color: #8a0000;
 }
 
-.batteriesCont {
-    width: 100%;
-    min-height: 83vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.batteries-content {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.batteries-body{
-    width: 85%;
-    height: 100%;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-
-.batteries-info{
-    height: 100%;
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-}
-
-.batteriesMain {
-    height: 50%;
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.batteriesImg {
-    width: 45%;
-    height: 50%;
-    float: right;
-    padding-left: 30px;
-   
-}
-
-.batteriesImg img {
-    width: 100%;
-    height: 100%;
-    float: right;
-}
-
-.batteriesText {
-    width: 100%;
-    height: 100%;
-    margin-top: -30px;
-}
-
-.batteriesText p {
-    font-size: 26px;
-    text-align: left;
-    width: 100%;
-}
-
-.batteriesText h2 {
-    font-size: 35px;
-    text-align: left;
-    width: 100%;
-    color: #8a0000;
-}
-
-.batteriesSecond {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.batteriesSecond h1 {
-    font-size: 28px;
-    text-align: center;
-    color: #8a0000;
-
-}
-
-.batteriesSecond ul {
-    padding-bottom: 20px;
-    margin-top: -5px;
-}
-
-.batteriesSecond li {
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-.brakesCont {
-    width: 100%;
-    min-height: 73vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.brakes-content {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.brakes-body{
-    width: 85%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-}
-
-
-.brakes-info{
-    height: 100%;
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.brakesMain {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.brakesMain h1 {
-    font-size: 22px;
-    text-align: center;
-    color: #8a0000;
-}
-
-.brakesImg {
-    width: 40%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    padding-left: 50px;
-    margin-top: 20px;
-    
-}
-
-.brakesImg img {
-    width: 90%;
-    height: 100%;
-    
-}
-
-.brakesText {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.brakesSecond p {
-    font-size: 21px;
-    text-align: center;
-    width: 90%;
-    margin-top: -10px;
-}
-
-.brakesSecond {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.brakesSecond h2 {
-    font-size: 35px;
-    text-align: center;
-    color: #8a0000;
-}
-
-.brakesText li {
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-.engineCont {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.engine-content {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.engine-body{
-    width: 85%;
-    height: 100%;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-}
-
-
-
-.engine-info{
-    height: 100%;
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-}
-
-.engineMain {
-    min-height: 60%;
-    width: 100%;
-}
-
-.engineImg {
-    width: 25%;
-    height: 50%;
-    padding-right: 20px;
-    float: left;
-}
-
-.engineImg img {
-    width: 100%;
-    height: 100%;
-    float: left;
-}
-
-.engineText {
-    width: 100%;
-    height: 100%;
-    margin-top: -20px;
-}
-
-.engineText h2 {
-    font-size: 32px;
-    text-align: left;
-    color: #8a0000;
-}
-
-.engineText p {
-    font-size: 22px;
-    text-align: left;
-    width: 100%;
-}
-
-.engineSecond {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-}
-
-.engineSecond h1 {
-    font-size: 28px;
-    text-align: center;
-    color: #8a0000;
-}
-
-.engineSecond li {
-    margin-bottom: 10px;
-    font-size: 22px;
-}
-
-.fleetCont {
-    width: 100%;
-    min-height: 82vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.fleet-content {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.fleet-body{
-    width: 85%;
-    height: 100%;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-}
-
-
-.fleet-info{
-    height: 100%;
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.fleet-info h1 {
-    font-size: 48px;
-    text-align: center;
-    color: #8a0000;
-    margin-top: -5px;
-    padding-bottom: 35px;
-}
-
-
-
-.fleetImg {
-    width: 45%;
-    height: 50%;
-    float: left;
-    padding-right: 20px;
-   
-}
-
-.fleetImg img {
-    width: 100%;
-    height: 100%;
-    float: left;
-}
-
-.fleetText {
-    width: 100%;
-    height: 100%;
-    margin-top: -30px;
-}
-
-.fleetText p {
-    font-size: 30px;
-    text-align: left;
-    width: 90%;
-}
-
-.oilCont {
-    width: 100%;
-    min-height: 73vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.oil-content {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.oil-body{
-    width: 75%;
-    height: 100%;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-}
-
-
-.oil-info{
-    height: 100%;
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.oilMain {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.oilMain h1 {
-    font-size: 22px;
-    text-align: center;
-    color: #8a0000;
-}
-
-.oilImg {
-    width: 50%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-top: 20px;
-    
-}
-
-.oilImg img {
-    width: 90%;
-    height: 100%;
-    
-}
-
-.oilText {
-    width: 55%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.oilText h1 {
-    font-size: 24px;
-    text-align: center;
-    color: #8a0000;
-}
-
-.oilSecond p {
-    font-size: 23px;
-    text-align: center;
-    width: 90%;
-    margin-top: -10px;
-}
-
-.oilSecond {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.oilSecond h2 {
-    font-size: 28px;
-    text-align: center;
-    color: #8a0000;
-}
-
-.oilText li {
-    margin-bottom: 10px;
-    font-size: 22px;
-}
-
-
-.transCont {
-    width: 100%;
-    min-height: 73vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.trans-content {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.trans-body{
-    width: 75%;
-    height: 100%;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-}
-
-
-.trans-info{
-    height: 100%;
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.transMain {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.transMain h1 {
-    font-size: 22px;
-    text-align: center;
-    color: #8a0000;
-}
-
-.transImg {
-    width: 40%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-top: 20px;
-    
-}
-
-.transImg img {
-    width: 90%;
-    height: 100%;
-    
-}
-
-.transText {
-    width: 55%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.transText h1 {
-    font-size: 24px;
-    text-align: left;
-    color: #8a0000;
-    margin-left: 20px;
-}
-
-.transSecond p {
-    font-size: 23px;
-    text-align: center;
-    width: 90%;
-    margin-top: -10px;
-}
-
-.transSecond {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.transSecond h2 {
-    font-size: 28px;
-    text-align: center;
-    color: #8a0000;
-}
-
-.transText li {
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-.tire {
+.visit {
     width: 100%;
     height: 100%;
     display: flex;
@@ -956,7 +1132,7 @@ footer h3 {
     justify-content: center;
 }
 
-.tire-content {
+.visit-content {
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -964,143 +1140,89 @@ footer h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.tire-banner {
+
+
+.visit-description {
     width: 70%;
-    height: 250px;
-    background-image: linear-gradient(to bottom left, rgba(138, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url("../images/banner.jpg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    padding-bottom: 30px;
-}
-
-.banner-content {
-    width: 40%;
     height: 100%;
-    align-items: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-}
-
-.banner-content h1 {
-    color: white;
-    font-size: 45px;
-}
-
-.banner-content p {
-    color: white;
-    font-size: 18px;
-}
-
-.tire-desc {
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.tire-desc h1 {
-    color: #8a0000;
-    font-size: 40px;
-}
-
-.descCont {
-    min-height: 60%;
-    width: 60%;
-}
-
-.tireImg {
-    width: 45%;
-    height: 50%;
-    float: left;
-    padding-right: 20px;
-   
-}
-
-.tireImg img {
-    width: 100%;
-    height: 100%;
-    float: left;
-}
-
-.tireImgTwo {
-    width: 45%;
-    height: 50%;
-    float: right;
-    padding-left: 20px;
-   
-}
-
-.tireImgTwo img {
-    width: 100%;
-    height: 100%;
-    float: right;
-}
-
-.tireText {
-    width: 100%;
-    height: 100%;
-    margin-top: -30px;
-    padding-bottom: 20px;
-}
-
-.tireText p {
-    font-size: 28px;
-    text-align: left;
-    width: 100%;
-}
-
-.tireInfo {
-    border-top: solid 1px grey;
-    min-height: 60%;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.tireInfo h1 {
-    font-size: 25px;
-    color: #8a0000;
     margin-top: 50px;
 }
 
-.tireInfo p {
-    font-size: 20px;
-}
-
-.tireServices {
-    min-height: 60%;
-    width: 60%;
+.visitImage {
+    width: 50%;
+    height: 400px;
+    margin-right: 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    background-image: linear-gradient(to bottom right, rgba(128,128,128, 0.5), rgba(0, 0, 0, 0.1)), url("../images/diner.JPG");
+    background-size: cover;
+    background-position: center;
 }
 
-.tireRow {
-    width: 30%;
-    height: 100%;
+.visitImageTwo {
+    width: 40%;
+    height: 400px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    background-image: linear-gradient(to bottom right, rgba(217,153,119, 0.5), rgba(0, 0, 0, 0.1)), url("../images/dinerTwo.JPG");
+    background-size: cover;
+    background-position: center;
+}
+
+
+.visitContent {
+    width: 100%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.tireRow h2 {
-    font-size: 25px;
-    color: #8a0000;
+.visitContent p {
+    font-size: 45px;
+    color: #5b706d;
+    font-family: 'Caveat', cursive;
 }
 
-.tireRow li {
-    font-size: 20px;
-    padding-bottom: 10px;
+.visitInfo  {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.visitHours {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.visitHours h4 {
+    font-size: 50px;
+    color: #d99977;
+    font-family: 'Caveat', cursive;
+}
+
+.visitHours p {
+    text-align: center;
 }
 
 
@@ -1121,90 +1243,98 @@ footer h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.about-desc {
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-top: 10px;
 }
 
-.about-desc h1 {
-    color: #8a0000;
-    font-size: 40px;
-    width: 60%;
-    text-align: center;
-}
 
-.aboutCont {
-    min-height: 60%;
-    width: 60%;
-}
 
-.aboutImg {
-    width: 25%;
-    height: 50%;
-    float: left;
-    padding-right: 20px;
-   
-}
-
-.aboutImg img {
-    width: 100%;
+.about-description {
+    width: 80%;
     height: 100%;
-    float: left;
-}
-
-.aboutImgTwo {
-    width: 45%;
-    height: 50%;
-    float: left;
-    padding-right: 20px;
-   
-}
-
-.aboutImgTwo img {
-    width: 100%;
-    height: 100%;
-    float: left;
-}
-
-.aboutText {
-    width: 100%;
-    height: 100%;
-    margin-top: -30px;
-    padding-bottom: 20px;
-}
-
-.aboutText p {
-    font-size: 28px;
-    text-align: left;
-    width: 100%;
-}
-
-.aboutInfo {
-    border-top: solid 1px grey;
-    min-height: 60%;
-    width: 60%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-}
-
-.aboutInfo h1 {
-    font-size: 25px;
-    color: #8a0000;
+    justify-content: center;
     margin-top: 50px;
 }
 
-.aboutInfo p {
-    font-size: 20px;
+.aboutImage {
+    width: 50%;
+    height: 400px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    background-image: linear-gradient(to bottom right, rgba(128,128,128, 0.5), rgba(0, 0, 0, 0.1)), url("../images/diner.JPG");
+    background-size: cover;
+    background-position: center;
 }
 
+.aboutImageTwo {
+    width: 40%;
+    height: 400px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    background-image: linear-gradient(to bottom right, rgba(217,153,119, 0.5), rgba(0, 0, 0, 0.1)), url("../images/dinerTwo.JPG");
+    background-size: cover;
+    background-position: center;
+}
+
+
+.aboutContent {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutContent h1 {
+    font-size: 65px;
+    color: #d99977;
+    font-family: 'Caveat', cursive;
+    text-align: center;
+}
+
+.aboutContent p {
+    font-size: 45px;
+    color: #5b706d;
+    font-family: 'Caveat', cursive;
+    text-align: center;
+}
+
+.aboutInfo  {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutHours {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.aboutHours h4 {
+    font-size: 50px;
+    color: #d99977;
+    font-family: 'Caveat', cursive;
+}
+
+.aboutHours p {
+    text-align: center;
+}
 
 
 .contact {
@@ -1224,138 +1354,102 @@ footer h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.contact-desc {
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-top: 10px;
 }
 
-.contact-desc h1 {
-    color: #8a0000;
-    font-size: 40px;
-    width: 60%;
-    text-align: center;
-}
 
-.contactCont {
-    min-height: 60%;
-    width: 60%;
-    margin-top: 30px;
-}
 
-.contactImg {
-    width: 45%;
-    height: 50%;
-    float: left;
-    padding-right: 20px;
-    padding-bottom: 40px;
-   
-}
-
-.contactImg img {
-    width: 100%;
+.contact-description {
+    width: 80%;
     height: 100%;
-    float: left;
-}
-
-.contactImgTwo {
-    width: 45%;
-    height: 50%;
-    float: right;
-    padding-right: 20px;
-    padding-top: 40px;
-   
-}
-
-.contactImgTwo img {
-    width: 100%;
-    height: 100%;
-    float: left;
-}
-
-.contactText {
-    width: 100%;
-    height: 100%;
-    padding-bottom: 40px;
-}
-
-.contactText h1 {
-    font-size: 35px;
-    color: #8a0000;
-    width: 100%;
-    text-align: left;
-}
-
-.contactText p {
-    font-size: 20px;
-    text-align: left;
-    width: 100%;
-}
-
-.contactInfo {
-    border-top: solid 1px grey;
-    min-height: 60%;
-    width: 60%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-}
-
-.contactInfo h1 {
-    font-size: 25px;
-    color: #8a0000;
+    justify-content: center;
     margin-top: 50px;
 }
 
-.contactInfo p {
-    font-size: 20px;
+
+
+
+.contactContent {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.mobile-nav {
-    display: none; /* Hide the navigation menu by default on desktop */
-    z-index: 9999;
+.contactContent h1 {
+    font-size: 85px;
+    color: #d99977;
+    font-family: 'Caveat', cursive;
+    text-align: center;
+}
+
+.contactContent p {
+    font-size: 45px;
+    color: #5b706d;
+    font-family: 'Caveat', cursive;
+    text-align: center;
+}
+
+.contactForm {
+    width: 80%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    max-width: 100%;
+    margin: 0 auto;
+    height: 100%;
   }
   
-  .menu-icon, .close-icon {
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
+  label {
+    display: block;
+    margin-bottom: 10px;
+    width: 50%;
+    font-size: 50px;
+    font-family: 'Caveat', cursive;
+  }
+  input {
+    display: block;
+    margin-bottom: 30px;
+    width: 50%;
+    height: 50px;
     font-size: 20px;
-    padding: 10px;
-    z-index: 10000;
+    background-color: #5b706d;
+  }
+  textarea {
+    display: block;
+    margin-bottom: 30px;
+    width: 50%;
+    height: 100px;
+    background-color: #5b706d;
   }
   
-  .menu {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    z-index: 10001;
+  input[type="submit"] {
+    background-color: #d99977;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
   }
   
-  .menu li {
-    padding: 10px;
-    background-color: #8a0000;
-  }
-  
-  .menu li a {
-    color: #ffffff;
-    text-decoration: none;
+  input[type="submit"]:hover {
+    background-color: #d99888;
   }
 
-  .close-icon {
-    display: none;
-  }
 
-  .sidenav-mobile {
-    display: none;
-  }
+
+
+
 
   
 
@@ -1382,7 +1476,49 @@ footer h3 {
     }
 
     .mobile-nav {
-        display: block; /* Display the navigation menu on mobile */
+        display: block; /* Hide the navigation menu by default on desktop */
+        z-index: 9999;
+        align-items: center;
+      }
+      
+      .menu-icon, .close-icon {
+        display: inline-block;
+        cursor: pointer;
+        color: #5b706d;
+        font-size: 30px;
+        padding: 10px;
+        
+        z-index: 10000;
+      }
+      
+      .menu {
+        display: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 150px;
+        height: 200px;
+        z-index: 10001;
+      }
+      
+      .menu li {
+        padding: 10px;
+        background-color: #abb0a6;
+      }
+      
+      .menu li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 25px;
+      }
+    
+      .close-icon {
+        display: none;
+        margin-top: 160px;
+      }
+    
+      .sidenav-mobile {
+        display: none;
       }
     
       .menu-icon {
@@ -1392,7 +1528,7 @@ footer h3 {
       .menu {
         display: none; /* Hide the menu by default on mobile */
       }
-
+    
       #toggle {
         display: none;
       }
@@ -1402,15 +1538,15 @@ footer h3 {
         display: block;
         z-index: 100;
       }
-
-       /* Hide the hamburger icon and show the close icon in the active state */
-        #toggle:checked ~ .menu-icon {
-            display: none;
-        }
-
-        #toggle:checked ~ .close-icon {
-            display: inline-block;
-        }
+    
+      /* Hide the hamburger icon and show the close icon in the active state */
+      #toggle:checked ~ .menu-icon {
+        display: none;
+    }
+    
+    #toggle:checked ~ .close-icon {
+        display: inline-block;
+    }
 
         .home {
             min-height: 100%;
@@ -1429,42 +1565,31 @@ footer h3 {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
         }
 
         .banner {
             width: 90%;
-            height: 100px;
-            background-image: linear-gradient(to bottom right, rgba(128,128,128, 0.2), rgba(0, 0, 0, 0.1)), url("../images/lit.avif");
+            height: 120px;
+            background-image: linear-gradient(to bottom right, rgba(128,128,128, 0.2), rgba(0, 0, 0, 0.1)), url("../images/view.JPG");
             background-size: cover;
             background-position: center;
             align-items: center;
             display: flex;
             flex-direction: column;
             margin-top: 50px;
-            text-align: left;
-            padding-bottom: 30px;
+            justify-content: center;
+            text-align: center;
+            padding-bottom: 10px;
         }
         
         .banner h1 {
             color: white;
-            font-size: 15px;
+            font-size: 18px;
+            margin-top: 10px;
         }
         
-        .banner p {
-            color: white;
-            font-size: 12px;
-        }
-        
-        .banner button {
-            background-color: #8a0000;
-            border: none;
-            width: 25%;
-            border-radius: 15px;
-            padding: 10px;
-            color: white;
-            font-size: 12px;
-            cursor: pointer;
-        }
+    
 
         .description {
             width: 90%;
@@ -1479,13 +1604,27 @@ footer h3 {
         .descImage {
             width: 80%;
             height: 150px;
-            margin-right: 60px;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 0;
+            background-image: linear-gradient(to bottom right, rgba(128,128,128, 0.5), rgba(0, 0, 0, 0.1)), url("../images/oysters.JPG");
+            background-size: cover;
+            background-position: center;
         }
-        
-        .descImage img {
-            width: 100%;
-            height: 100%;
-            border: solid 1px #8a0000;
+
+        .descImage button {
+            width: 50%;
+            height: 50%;
+            font-size: 20px;
+            background-color: #d99977;
+            border-radius: 5%;
+            border: 2px solid white;
+            cursor: pointer;
+            font-family: 'Caveat', cursive;
+            color: white;
+            font-size: 20px;
         }
         .descContent {
             width: 70%;
@@ -1494,15 +1633,36 @@ footer h3 {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center;
         }
         
         .descContent p {
-            font-size: 16px;
-            text-align: center;
-            color: #8a0000;
+            font-size: 25px;
+            color: #5b706d;
+            font-family: 'Caveat', cursive;
         }
-
-        .services {
+        
+        .menus {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .menusContent {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .brunch {
             width: 100%;
             height: 100%;
             display: flex;
@@ -1511,234 +1671,132 @@ footer h3 {
             justify-content: center;
             margin-top: 50px;
         }
-        
-        .servContent {
-            width: 90%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .repair{
+
+        .brunchContent {
             width: 80%;
             height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-        
-        .repair img {
-            width: 100%;
-            height: 190px;
-        }
-        
-        .repair a{
-            color: #8a0000;
-            text-decoration: none;
-            font-size: 20px;
-            text-emphasis-style: bold;
-            margin-top: 12px;
-        }
-        
-        .repair p {
-            width: 80%;
-            font-size: 15px;
             text-align: center;
+            order: 2;
         }
         
-        .repairTwo{
+        
+        .brunchImage {
             width: 80%;
-            height: 100%;
+            min-height: 150px;
+            margin-left: 15px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-        
-        .repairTwo img {
-            width: 100%;
-            height: 190px;
-        }
-        
-        .repairTwo a{
-            color: #8a0000;
-            text-decoration: none;
-            font-size: 20px;
-            text-emphasis-style: bold;
-            margin-top: 12px;
-        }
-        
-        .repairTwo p {
-            width: 80%;
-            font-size: 15px;
-            text-align: center;
-        }
-        
-        .repairThree{
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-        
-        .repairThree img {
-            width: 100%;
-            height: 190px;
-        }
-        
-        .repairThree a{
-            color: #8a0000;
-            text-decoration: none;
-            font-size: 20px;
-            text-emphasis-style: bold;
-            margin-top: 12px;
-        }
-        
-        .repairThree p {
-            width: 80%;
-            font-size: 15px;
-            text-align: center;
-        }
-        
-        footer {
-            display: flex;
-            flex-direction: row;
-            height: 50px;
-            width: 100%;
-            align-items: center;
-            justify-content: space-evenly;
-            margin-top: 25px;
-            background-color: #8a0000;
-            bottom: 0;
-        }
-
-        footer h3 {
-            font-size: 15px;
-        }
-
-        footer p {
-            font-size: 12px;
-        }
-
-        .servicesCont {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-        
-        .services-content {
-            width: 100%;
-            min-height: 100%;
+            z-index: 0;
+            background-image: linear-gradient(to bottom right, rgba(128,128,128, 0.5), rgba(0, 0, 0, 0.1)), url("../images/cocktailTwo.JPG");
             background-size: cover;
             background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            order: 1;
         }
         
-        .services-body{
-            width: 100%;
-            height: 100%;
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        
-        
-        .services-info{
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .servImg {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-           
-        }
-        
-        .servImg img {
-            width: 100%;
-            height: 100%;
-            align-items: center;
-        }
-        
-        .servText {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .servText p {
-            font-size: 14px;
-            text-align: center;
-            width: 80%;
-        }
-        
-        .servText h2 {
-            font-size: 22px;
-            text-align: center;
-            width: 100%;
-            color: #8a0000;
-        }
-        
-        .servSecond {
-            height: 50%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .servSecond h1 {
-            font-size: 22px;
-            text-align: center;
-            color: #8a0000;
-        }
-        
-        .servSecond li {
-            margin-bottom: 15px;
+        .brunchImage button {
+            width: 50%;
+            min-height: 50%;
             font-size: 20px;
-            width: 95%;
+            background-color: #d99977;
+            border-radius: 5%;
+            border: 2px solid white;
+            cursor: pointer;
+            font-family: 'Caveat', cursive;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
         }
 
-        .sidenav{
-            display: none;
+       
+        .brunchContent p {
+            font-size: 25px;
+            color: #5b706d;
+            font-family: 'Caveat', cursive;
+            text-align: center;
         }
 
-        .sidenav-mobile {
+        .links {
+            height: 20%;
+            width: 80%;
             display: flex;
             flex-direction: row;
-            width: 100%;
-            align-items: center;
+            justify-content: center;
+            align-items: flex-end;
         }
         
-        .sidenav-mobile a {
+        .links a {
             text-decoration: none;
-            font-size: 12px;
-            padding: 10px;
-            text-align: left;
+            font-size: 15px;
+            padding-right: 25px;
+            padding-left: 25px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            color: #d99977;
+            font-family: 'Caveat', cursive;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
             width: 100%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+            background-color: white;
+            bottom: 0;
+            font-family: 'Caveat', cursive;
+        }
+        
+        .footerRow {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        footer p {
+            color: white;
+            font-size: 30px;
+            margin-top: -10px;
+            padding-bottom: 20px;
+            display: none;
+        }
+        
+        footer h3 {
+            color: #5b706d;
+            font-size: 25px;
+        }
+        
+        footer h4 {
+            color: #d99977;
+            font-size: 40px;
+            margin-top: -20px;
+            display: none;
+            width: 100%;
+        }
+
+        .sidenav {
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sidenav a {
+            text-decoration: none;
+            font-size: 25px;
+            padding: 20px;
+            text-align: left;
+            font-family: 'Caveat', cursive;
         }
         
         .nav-link {
@@ -1746,24 +1804,29 @@ footer h3 {
           }
           
           .nav-link-active{
-            color: black;
+            color: #d99977;;
           }
         
-        .sidenav-mobile h2 {
-            display: none;
-        }
-
-
-        .batteriesCont {
+        .menuCont {
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
         
-        .batteries-content {
+        .menuMain {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #d99977;
+        }
+        
+        .menu-content {
             width: 100%;
             min-height: 100%;
             background-size: cover;
@@ -1771,108 +1834,10 @@ footer h3 {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
         
-        .batteries-body{
-            width: 100%;
-            height: 100%;
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        
-        
-        .batteries-info{
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .batteriesImg {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-           
-        }
-        
-        .batteriesImg img {
-            width: 100%;
-            height: 100%;
-            align-items: center;
-        }
-        
-        .batteriesText {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .batteriesText p {
-            font-size: 14px;
-            text-align: center;
-            width: 80%;
-        }
-        
-        .batteriesText h2 {
-            font-size: 22px;
-            text-align: center;
-            width: 100%;
-            color: #8a0000;
-        }
-        
-        .batteriesSecond {
-            height: 50%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .batteriesSecond h1 {
-            font-size: 22px;
-            text-align: center;
-            color: #8a0000;
-        }
-        
-        .batteriesSecond li {
-            margin-bottom: 15px;
-            font-size: 20px;
+        .menu-body{
             width: 95%;
-        }
-
-        .brakesCont {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .brakes-content {
-            width: 100%;
-            min-height: 100%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .brakes-body{
-            width: 100%;
             height: 100%;
             margin-top: 30px;
             display: flex;
@@ -1880,688 +1845,866 @@ footer h3 {
             align-items: center;
             justify-content: center;
         }
-
-        .brakes-info{
+        
+        
+        
+        .menu-info{
             height: 100%;
             width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            margin-top: 20px;
+            
         }
-
-        .brakesSecond {
-            height: 50%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .brakesSecond h2 {
-            font-size: 22px;
-            text-align: center;
-            color: #8a0000;
-        }
-
-        .brakesSecond p {
-            font-size: 16px;
-            text-align: center;
-            width: 80%;
-        }
-
-        .brakesMain {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .brakesText {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .brakesImg {
+        
+        .menuImg {
             width: 90%;
             height: 50%;
-            display: flex;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .brakesImg img {
-            width: 100%;
-            height: 100%;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-top: 10px;
         }
         
-        .engineCont{
+        .menuImg img {
+            width: 100%;
+            height: 100%;
+            float: left;
+        }
+        
+        .menuText {
+            width: 85%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .menuText li {
+            font-size: 12px;
+            width: 100%;
+            font-family: 'Caveat', cursive;
+        }
+        
+        .menuRow {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: -50px;
+        }
+        
+        .menu-rowContent {
             width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-
-        .engine-content {
-            width: 100%;
-            min-height: 100%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .engine-body{
-            width: 100%;
-            height: 100%;
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .engine-info{
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .engineMain {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .engineImg {
-            width: 70%;
-            height: 50%;
-            display: flex;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .engineImg img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .engineText {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .engineText h2 {
-            font-size: 22px;
-            text-align: center;
-            color: #8a0000;
-        }
-
-        .engineText p {
-            font-size: 18px;
-            text-align: center;
-            width: 80%;
-        }
-
-        .engineSecond {
-            height: 50%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .engineSecond h1 {
-            font-size: 22px;
-            text-align: center;
-            color: #8a0000;
-        }
-
-        .engineSecond li {
-            margin-bottom: 15px;
-            font-size: 20px;
-            width: 95%;
-        }
-
-        .transCont{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .trans-content {
-            width: 100%;
-            min-height: 100%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .trans-body{
-            width: 100%;
-            height: 100%;
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .trans-info{
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .transMain {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .transImg {
-            width: 70%;
-            height: 50%;
-            display: flex;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .transImg img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .transText {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .transText h1 {
-            font-size: 22px;
-            text-align: center;
-            color: #8a0000;
-        }
-
-        .transText p {
-            font-size: 18px;
-            text-align: center;
-            width: 80%;
-        }
-
-        .transSecond {
-            height: 50%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .transSecond h1 {
-            font-size: 22px;
-            text-align: center;
-            color: #8a0000;
-        }
-
-        .transSecond li {
-            margin-bottom: 15px;
-            font-size: 20px;
-            width: 95%;
-        }
-
-        .transSecond p {
-            font-size: 16px;
-            text-align: center;
-            width: 80%;
-        }
-
-        .fleetCont{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .fleet-content {
-            width: 100%;
-            min-height: 100%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .fleet-body{
-            width: 100%;
-            height: 100%;
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .fleet-info{
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .fleetMain {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .fleetImg {
-            width: 70%;
-            height: 50%;
-            display: flex;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .fleetImg img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .fleetText {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .fleet-info h1 {
-            font-size: 22px;
-            text-align: center;
-            color: #8a0000;
-        }
-
-        .fleetText p {
-            font-size: 18px;
-            text-align: center;
-            width: 80%;
-        }
-
-        .oilCont{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .oil-content {
-            width: 100%;
-            min-height: 100%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .oil-body{
-            width: 100%;
-            height: 100%;
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .oil-info{
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .oilMain {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .oilImg {
-            width: 70%;
-            height: 50%;
-            display: flex;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .oilImg img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .oilText {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .oilText h1 {
-            font-size: 22px;
-            text-align: center;
-            color: #8a0000;
-        }
-
-        .oilText p {
-            font-size: 18px;
-            text-align: center;
-            width: 80%;
-        }
-
-        .oilSecond {
-            height: 50%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .oilSecond h2 {
-            font-size: 20px;
-            text-align: center;
-            color: #8a0000;
-        }
-
-        .oilText li {
-            margin-bottom: 15px;
-            font-size: 20px;
-            width: 95%;
-        }
-
-        .oilSecond p {
-            font-size: 16px;
-            text-align: center;
-            width: 80%;
-        }
-
-        .tire{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .tire-content {
-            width: 100%;
-            min-height: 100%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .tire-banner{
-            width: 90%;
-            height: 100%;
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .banner-content{
-            height: 100%;
-            width: 80%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .banner-content h1 {
-            font-size: 22px;
-            text-align: center;
-            color: #8a0000;
-        }
-
-        .banner-content p {
-            font-size: 18px;
-            text-align: center;
-            width: 80%;
-        }
-
-        .tire-desc{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .tire-desc h1 {
-            font-size: 22px;
-            text-align: center;
-            color: #8a0000;
-        }
-
-        .descContent {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .tireImg {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .tireImg img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .tireText {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .tireText p {
-            font-size: 16px;
-            text-align: center;
-            width: 100%;
-        }
-
-        .tireImgTwo {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .tireImgTwo img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .tireInfo {
-            width: 90%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .tireInfo h1 {
-            font-size: 22px;
-            text-align: center;
-            color: #8a0000;
-        }
-
-        .tireInfo p {
-            font-size: 16px;
-            text-align: center;
-            width: 100%;
-        }
-
-        .tireServices {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .tireRow {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-        }
-
-        .tireRow h2 {
-            font-size: 22px;
+            font-family: 'Caveat', cursive;
             text-align: left;
-            color: #8a0000;
             margin-left: 20px;
+        }
+        
+        .menu-rowContent h3 {
+            font-size: 25px;
+            color: #223745;
+            width: 100%;
+        }
+        
+        .menu-rowContent p {
+            font-size: 15px;
+            margin-top: -20px;
+            width: 100%;
+        }
+        
+        .menuText h2 {
+            font-size: 65px;
+            text-align: center;
+            width: 100%;
+            color: #5b706d;
+            font-family: 'Caveat', cursive;
+            margin-top: 0px;
+        }
+        
+        .menuSecond {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #223745;
+        }
+        
+        .menuTextTwo , .menuImgTwo {
+            flex-basis: 50%;
+        }
+        
+        .menuImgTwo {
+            width: 90%;
+            height: 50%;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-top: 10px;
+           order: 1;
+        }
+        
+        .menuImgTwo img {
+            width: 100%;
+            height: 100%;
+            float: left;
+        }
+        
+        .menuTextTwo {
+            width: 85%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            order: 2;
+        }
+        
+        .menuTextTwo li {
+            font-size: 12px;
+            width: 100%;
+            font-family: 'Caveat', cursive;
+        }
+        
+        
+        .menuRowTwo {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: -50px;
+            
+        }
+        
+        .menu-rowContentTwo {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Caveat', cursive;
+            text-align: left;
+            margin-left: 20px;
+            margin-top: -30px;
+        }
+        
+        .menu-rowContentTwo h3 {
+            color: #d99977;
+            width: 100%;
+            font-size: 25px;
+        }
+        
+        .menu-rowContentTwo p {
+         font-size: 15px;
+            margin-top: -20px;
+            width: 100%;
+            color: white;
+        }
+        
+        .menuTextTwo h2 {
+            font-size: 65px;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-family: 'Caveat', cursive;
+            margin-top: 0px;
+        }
+        
+        
+        
+        .menuThird {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #5b706d;
+        }
+        
+        
+        
+        .menuTextThird , .menuImgThird {
+            flex-basis: 50%;
+        }
+        
+        .menuImgThird {
+            width: 90%;
+            height: 50%;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .menuImgThird img {
+            width: 100%;
+            height: 100%;
+            float: left;
+        }
+        
+        .menuTextThird {
+            width: 85%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            order: 2;
+        }
+        
+        .menuTextThird li {
+            font-size: 12px;
+            width: 100%;
+            font-family: 'Caveat', cursive;
+        }
+        
+        .menuRowThird {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: -50px;
+        }
+        
+        .menu-rowContentThird {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Caveat', cursive;
+            text-align: left;
+            margin-left: 20px;
+            margin-top: -30px;
+        }
+        
+        .menu-rowContentThird h3 {
+            color: #d99977;
+            width: 100%;
+            font-size: 35px;
+        }
+        
+        .menu-rowContentThird p {
+         font-size: 25px;
+            margin-top: -20px;
+            width: 100%;
+            color: white;
+        }
+        
+        .menuTextThird h2 {
+            font-size: 65px;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-family: 'Caveat', cursive;
+            margin-top: 0px;
+        }
+        
+        
+        .menuFourth {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #d99977;
+        }
+        
+        
+        
+        .menuTextFourth , .menuImgFourth {
+            flex-basis: 50%;
+        }
+        
+        .menuImgFourth {
+            width: 90%;
+            height: 50%;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-top: 10px;
+           order: 1;
+        }
+        
+        .menuImgFourth img {
+            width: 100%;
+            height: 100%;
+            float: left;
+        }
+        
+        .menuTextFourth {
+            width: 85%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            order: 2;
+        }
+        
+        .menuTextFour li {
+            font-size: 12px;
+            width: 100%;
+            font-family: 'Caveat', cursive;
+        }
+        
+        
+        .menuRowFourth {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: -50px;
+            
+        }
+        
+        .menu-rowContentFourth {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Caveat', cursive;
+            text-align: left;
+            margin-left: 20px;
+            margin-top: -30px;
+        }
+        
+        .menu-rowContentFourth h3 {
+            color: #223745;
+            width: 100%;
+            font-size: 28px;
+        }
+        }
+        
+        .menu-rowContentFourth p {
+            font-size: 18px;
+            margin-top: -20px;
+            width: 100%;
+        }
+        
+        .menuTextFourth h2 {
+            font-size: 65px;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-family: 'Caveat', cursive;
+            margin-top: 0px;
+            padding-bottom: 20px;
+        }
+
+        .cocktail-info{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            
+        }
+
+        .cocktailMain {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #d99977;
+        }
+
+        .cocktailImg {
+            width: 90%;
+            height: 50%;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .cocktailImg img {
+            width: 100%;
+            height: 100%;
+            float: left;
+        }
+
+        .cocktail-info{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            
+        }
+
+        .cocktailRow {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: -50px;
+        }
+        
+        .cocktail-rowContent {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Caveat', cursive;
+            text-align: left;
+            margin-left: 20px;
+        }
+        
+        .cocktail-rowContent h3 {
+            font-size: 25px;
+            color: #223745;
+            width: 100%;
+        }
+        
+        .cocktail-rowContent p {
+            font-size: 15px;
+            margin-top: -20px;
+            width: 100%;
+        }
+
+        .cocktailSecond {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #223745;
+        }
+        
+        .cocktailTextTwo , .cocktailImgTwo {
+            flex-basis: 50%;
+        }
+        
+        .cocktailImgTwo {
+            width: 90%;
+            height: 50%;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-top: 10px;
+           order: 1;
+        }
+        
+        .cocktailImgTwo img {
+            width: 100%;
+            height: 100%;
+            float: left;
+        }
+        
+        .cocktailTextTwo {
+            width: 85%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            order: 2;
+        }
+        
+        .cocktailTextTwo li {
+            font-size: 12px;
+            width: 100%;
+            font-family: 'Caveat', cursive;
+        }
+        
+        
+        .cocktailRowTwo {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: -50px;
+            
+        }
+        
+        .cocktail-rowContentTwo {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Caveat', cursive;
+            text-align: left;
+            margin-left: 20px;
+            margin-top: -10px;
+        }
+        
+        .cocktail-rowContentTwo h3 {
+            color: #d99977;
+            width: 100%;
+            font-size: 25px;
+        }
+        
+        .cocktail-rowContentTwo p {
+         font-size: 15px;
+            width: 100%;
+            color: white;
+        }
+        
+        .cocktailTextTwo h2 {
+            font-size: 65px;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-family: 'Caveat', cursive;
+            margin-top: 0px;
+        }
+        
+        .cocktailThird {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #5b706d;
+        }
+        
+        
+        
+        .cocktailTextThird , .cocktailImgThird {
+            flex-basis: 50%;
+        }
+        
+        .cocktailImgThird {
+            width: 90%;
+            height: 50%;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .cocktailImgThird img {
+            width: 100%;
+            height: 100%;
+            float: left;
+        }
+        
+        .cocktailTextThird {
+            width: 85%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            order: 2;
+        }
+        
+        .cocktailTextThird li {
+            font-size: 12px;
+            width: 100%;
+            font-family: 'Caveat', cursive;
+        }
+        
+        .cocktailRowThird {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: -50px;
+            
+        }
+        
+        .cocktail-rowContentThird {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Caveat', cursive;
+            text-align: left;
+            margin-left: 10px;
+            margin-top: -30px;
+        }
+        
+        .cocktail-rowContentThird h3 {
+            color: #d99977;
+            width: 100%;
+            font-size: 20px;
+        }
+        
+        .cocktail-rowContentThird p {
+         font-size: 25px;
+            margin-top: -40px;
+            width: 100%;
+            color: white;
+        }
+        
+        .cocktailTextThird h2 {
+            font-size: 65px;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-family: 'Caveat', cursive;
+            margin-top: 0px;
+        }
+
+        .cocktail-rowContentThird h2 {
+            font-size: 45px;
+            text-align: center;
+            width: 100%;
+            color: #223745;
+            font-family: 'Caveat', cursive;
+            margin-top: 40px;
+            margin-right: 30px;
+        }
+        
+        
+        .cocktailFourth {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #d99977;
+        }
+        
+        
+        
+        .cocktailTextFourth , .cocktailImgFourth {
+            flex-basis: 50%;
+        }
+        
+        .cocktailImgFourth {
+            width: 90%;
+            height: 50%;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-top: 10px;
+           order: 1;
+        }
+        
+        .cocktailImgFourth img {
+            width: 100%;
+            height: 100%;
+            float: left;
+        }
+        
+        .cocktailTextFourth {
+            width: 85%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            order: 2;
+        }
+        
+        .cocktailTextFour li {
+            font-size: 12px;
+            width: 100%;
+            font-family: 'Caveat', cursive;
+        }
+        
+        
+        .cocktailRowFourth {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: -50px;
+            
+        }
+        
+        .cocktail-rowContentFourth {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Caveat', cursive;
+            text-align: left;
+            margin-left: 20px;
+            margin-top: -30px;
+        }
+        
+        .cocktail-rowContentFourth h3 {
+            color: #223745;
+            width: 100%;
+            font-size: 28px;
+        }
+        
+        .cocktail-rowContentFourth p {
+            font-size: 18px;
+            margin-top: -20px;
+            width: 100%;
+        }
+        
+        .cocktailTextFourth h2 {
+            font-size: 65px;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-family: 'Caveat', cursive;
+            margin-top: 0px;
+            padding-bottom: 20px;
+        }
+
+        .visit {
+            min-height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .visit-content {
+            width: 100%;
+            min-height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .visit-description {
+            width: 90%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .visitImage {
+            width: 100%;
+            min-height: 150px;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 0;
+        }
+
+        .visitContent {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .visitContent p {
+            font-size: 25px;
+            color: #5b706d;
+            font-family: 'Caveat', cursive;
+            text-align: center;
+        }
+
+        .visitInfo {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: -40px;
+        }
+
+        .visitHours {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: -60px;
+        }
+
+        .visitHours h4 {
+            font-size: 45px;
+            font-family: 'Caveat', cursive;
+            text-align: center;
+            padding-bottom: 0px;
+        }
+        
+        .visitHours p {
+            font-size: 25px;
+            color: #5b706d;
+            font-family: 'Caveat', cursive;
+            text-align: center;
+            margin-top: -10px;
+        }
+
+        .visitImageTwo {
+            width: 100%;
+            min-height: 150px;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 0;
         }
 
         .about {
+            min-height: 100%;
             width: 100%;
-            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
         }
 
         .about-content {
             width: 100%;
-            height: 100%;
+            min-height: 100%;
+            background-size: cover;
+            background-position: center;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .about-desc {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .about-desc h1 {
-            font-size: 25px;
-            text-align: center;
-            color: #8a0000;
+        .about-description {
             width: 90%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 50px;
         }
 
-        .aboutCont {
+        .aboutContent {
             width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 30px;
-        }
-
-        .aboutText {
-            width: 90%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .aboutText p {
-            font-size: 16px;
             text-align: center;
-            width: 90%;
         }
 
-        .aboutImgTwo {
-            width: 80%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0px;
-            padding: 0px;
-            margin-bottom: 30px;
+        .aboutContent p {
+            font-size: 25px;
+            color: #5b706d;
+            font-family: 'Caveat', cursive;
+            text-align: center;
         }
 
         .contact {
@@ -2570,78 +2713,116 @@ footer h3 {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
         }
-
+        
         .contact-content {
             width: 100%;
             height: 100%;
+            background-size: cover;
+            background-position: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
         }
-
-        .contact-desc {
-            width: 100%;
+        
+        
+        
+        .contact-description {
+            width: 80%;
             height: 100%;
             display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        
+        
+        
+        .contactContent {
+            width: 100%;
+            height: 70%;
+            display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            margin-top: -60px;
         }
-
-        .contact-desc h1 {
-            font-size: 23px;
+        
+        .contactContent h1 {
+            font-size: 85px;
+            color: #d99977;
+            font-family: 'Caveat', cursive;
             text-align: center;
-            color: #8a0000;
-            width: 90%;
         }
-
-        .contactCont {
-            width: 100%;
+        
+        .contactContent p {
+            font-size: 45px;
+            color: #5b706d;
+            font-family: 'Caveat', cursive;
+            text-align: center;
+        }
+        
+        .contactForm {
+            width: 80%;
             height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 30px;
         }
-
-        .contactImg{
-            width: 80%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0px;
-            padding: 0px;
-            margin-bottom: 30px;
-        }
-
-        .contactText {
-            width: 90%;
+        
+        form {
+            max-width: 100%;
+            margin: 0 auto;
             height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .contactText p {
-            font-size: 16px;
-            text-align: center;
-            width: 90%;
-        }
-
-        .contactImgTwo {
+          }
+          
+          label {
+            display: block;
+            margin-bottom: 10px;
             width: 80%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0px;
-            padding: 0px;
+            font-size: 50px;
+            font-family: 'Caveat', cursive;
+          }
+          input {
+            display: block;
             margin-bottom: 30px;
-        }
+            width: 80%;
+            height: 50px;
+            font-size: 20px;
+            background-color: #5b706d;
+            border: solid 2px black;
+          }
+          
+          textarea {
+            display: block;
+            margin-bottom: 30px;
+            width: 80%;
+            height: 100px;
+            background-color: #5b706d;
+            border: solid 2px black;
+          }
+          
+          input[type="submit"] {
+            background-color: #d99977;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+          }
+          
+          input[type="submit"]:hover {
+            background-color: #d99888;
+          }
+        
+        
+        
+     
 
-}
 
 /* Tablets */
 
