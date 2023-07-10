@@ -269,7 +269,7 @@ html, body {
 }
 
 .brunchImage button {
-    width: 35%;
+    width: 25%;
     height: 25%;
     font-size: 20px;
     background-color: #d99977;
@@ -278,7 +278,14 @@ html, body {
     cursor: pointer;
     font-family: 'Caveat', cursive;
     color: white;
-    font-size: 35px;
+    font-size: 25px;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-family: 'Caveat', cursive;
 }
 .brunchContent {
     width: 55%;
@@ -2796,7 +2803,7 @@ form {
             background-color: #5b706d;
             border: solid 2px black;
           }
-          
+
           textarea {
             display: block;
             margin-bottom: 30px;
