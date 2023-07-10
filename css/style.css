@@ -1698,11 +1698,9 @@ form {
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 0;
             background-image: linear-gradient(to bottom right, rgba(128,128,128, 0.5), rgba(0, 0, 0, 0.1)), url("../images/cocktailTwo.JPG");
             background-size: cover;
             background-position: center;
-            order: 1;
         }
         
         .brunchImage button {
@@ -1722,7 +1720,7 @@ form {
             height: 100%;
             width: 100%;
             text-decoration: none;
-            color: white;
+            color: green;
             font-size: 25px;
             font-family: 'Caveat', cursive;
         }
