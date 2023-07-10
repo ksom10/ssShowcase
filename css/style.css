@@ -1714,13 +1714,14 @@ form {
             border: 2px solid white;
             cursor: pointer;
             font-family: 'Caveat', cursive;
+            padding: 5px;
         }
 
         .btn-link {
             height: 100%;
             width: 100%;
             text-decoration: none;
-            color: green;
+            color: blue;
             font-size: 25px;
             font-family: 'Caveat', cursive;
         }
